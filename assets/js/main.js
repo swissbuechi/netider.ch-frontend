@@ -15,7 +15,7 @@ $(function() {
         var scroll = $(window).scrollTop();
         if (scroll < 20) {
             $(".navbar-area").removeClass("sticky");
-            $(".navbar-area img").attr("src", "assets/images/logo-simple.svg");
+            $(".navbar-area img").attr("src", "assets/images/logo-simple-white.svg");
         } else {
             $(".navbar-area").addClass("sticky");
             $(".navbar-area img").attr("src", "assets/images/logo-simple.svg");
