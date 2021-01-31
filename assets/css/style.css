@@ -2161,6 +2161,12 @@ p {
 /*===========================
         09.NAVBAR css 
 ===========================*/
+
+.navbar-brand  img{
+  height: 96px;
+  width: auto;
+}
+
 .navbar-area {
   position: absolute;
   top: 0;
