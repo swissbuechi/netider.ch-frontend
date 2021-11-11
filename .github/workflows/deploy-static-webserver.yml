@@ -9,31 +9,32 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
-      - name: Sync files
-        uses: SamKirkland/FTP-Deploy-Action@4.1.0
-        with:
-          server: ${{ secrets.HOST }}
-          port: ${{ secrets.PORT }}
-          username: ${{ secrets.USERNAME }}
-          password: ${{ secrets.password }}
-#          protocol: sftp
-          server-dir: htdocs/
-          #          exclude:
-          #            - .github
-          #            - .gitignore
-          #            - .git
-          #            - README.md
-          dangerous-clean-slate: true
-          #      - name: copy file via ssh
-          #        uses: appleboy/scp-action@master
+          #      - name: Sync files
+          #        uses: SamKirkland/FTP-Deploy-Action@4.1.0
           #        with:
-          #          host: ${{ secrets.HOST }}
-          #          username: ${{ secrets.USERNAME }}
-          #          #          key: ${{ secrets.KEY }}
-          #          password: ${{ secrets.PASSWORD }}
+          #          server: ${{ secrets.HOST }}
           #          port: ${{ secrets.PORT }}
-          #          source: "./,!README.md,!.github,!.gitignore,!.git"
-          #          #          target: "/opt/easyengine/sites/netider.ch/app/htdocs"
-          #          target: "/htdocs"
-          ##          rm: true
+          #          username: ${{ secrets.USERNAME }}
+          #          password: ${{ secrets.password }}
+          ##          protocol: sftp
+          #          server-dir: htdocs/
+          #          #          exclude:
+          #          #            - .github
+          #          #            - .gitignore
+          #          #            - .git
+        #          #            - README.md
+        #          dangerous-clean-slate: true
+      - name: copy file via ssh
+        uses: appleboy/scp-action@master
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          #          key: ${{ secrets.KEY }}
+          password: ${{ secrets.PASSWORD }}
+          port: ${{ secrets.PORT }}
+          tar_tmp_path: "/htdocs"
+          source: "./,!README.md,!.github,!.gitignore,!.git"
+          #          target: "/opt/easyengine/sites/netider.ch/app/htdocs"
+          target: "/htdocs"
+          #          rm: true
 
