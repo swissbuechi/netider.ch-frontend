@@ -17,5 +17,5 @@ jobs:
           password: ${{ secrets.PASSWORD }}
           port: ${{ secrets.PORT }}
           source: "./,!README.md,!.github,!.gitignore,!.git"
-          target: "./"
+          target: "test"
           rm: true
