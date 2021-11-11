@@ -16,7 +16,7 @@ jobs:
           port: ${{ secrets.PORT }}
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.password }}
-          protocol: sftp
+#          protocol: sftp
           server-dir: htdocs/
           #          exclude:
           #            - .github
