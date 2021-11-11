@@ -20,4 +20,4 @@ jobs:
           source: "./,!README.md,!.github,!.gitignore,!.git"
           #          target: "/opt/easyengine/sites/netider.ch/app/htdocs"
           target: "/htdocs"
-          rm: true
+#          rm: true
