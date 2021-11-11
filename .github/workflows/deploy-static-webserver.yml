@@ -14,9 +14,8 @@ jobs:
         with:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
-          key: ${{ secrets.KEY }}
-#          port: ${{ secrets.PORT }}
+          password: ${{ secrets.PASSWORD }}
+          port: ${{ secrets.PORT }}
           source: "./,!README.md,!.github,!.gitignore,!.git"
-          target: "/opt/easyengine/sites/netider.ch/app/htdocs"
-#          target: "/home/raphi/test/netider.ch"
+          target: "./"
           rm: true
