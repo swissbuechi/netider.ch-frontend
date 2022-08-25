@@ -5,33 +5,22 @@ on:
 jobs:
 
   deploy:
-    name: Deploy static files to webserver
+    name: deploy static content
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
 
-      - name: Remove ignored files
-        run: rm -rf .gitignore
+      - name: remove unnecessary files
+        run: rm -rf .gitignore README.md
 
-      - name: copy file via sftp
+      - name: copy files via sftp
         uses: wlixcc/SFTP-Deploy-Action@v1.2.4
         with:
           server: ${{ secrets.HOST }}
           port: ${{ secrets.PORT }}
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASSWORD }}
-          local_path: './index.html'
+          local_path: './*'
           remote_path: '/htdocs'
           sftp_only: true
-#          delete_remote_files: true
-#          sftpArgs: '-o ConnectTimeout=5'
-#          host: ${{ secrets.HOST }}
-#          username: ${{ secrets.USERNAME }}
-#          #          key: ${{ secrets.KEY }}
-#          password: ${{ secrets.PASSWORD }}
-#          port: ${{ secrets.PORT }}
-#          #          tar_tmp_path: "/htdocs"
-#          #          source: "./,!README.md,!.github,!.gitignore"
-#          source: "index.html,!README.md,!.github,!.gitignore"
-#          target: "htdocs"
-#          #          rm: true
+          delete_remote_files: true
