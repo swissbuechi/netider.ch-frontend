@@ -22,5 +22,5 @@ jobs:
           password: ${{ secrets.PASSWORD }}
           local_path: './'
           remote_path: '/htdocs'
-#          sftp_only: true
-          delete_remote_files: true
+          sftp_only: true
+#          delete_remote_files: true
