@@ -5,6 +5,7 @@ on:
 jobs:
 
   deploy:
+    name: Deploy static files to webserver
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -17,7 +18,7 @@ jobs:
         with:
           server: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
+          password: ${{ secrets.PASSWORD }}
           local_path: './index.html'
           remote_path: '/htdocs'
           sftp_only: true
